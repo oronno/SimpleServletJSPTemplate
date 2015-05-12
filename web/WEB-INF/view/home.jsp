@@ -7,7 +7,20 @@
 </head>
 <body>
 
-Welcome to Home!
+<p>
+    Here is the list of users:
+</p>
+<table border="1">
+    <th>Name</th>
+    <th>Email</th>
+    <c:forEach var="user" items="${userList}">
+        <tr>
+            <td><c:out value="${user.name}"/></td>
+            <td><c:out value="${user.email}"/></td>
+        </tr>
+
+    </c:forEach>
+</table>
 
 </body>
 </html>
