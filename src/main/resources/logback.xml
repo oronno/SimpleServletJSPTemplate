@@ -9,8 +9,7 @@
         </layout>
     </appender>
 
-    <logger name="com.ibcs.primax.javaee.web" level="DEBUG"/>
-    <logger name="com.ibcs.primax.javaee.service" level="INFO"/>
+    <logger name="com.oneous.javaee" level="DEBUG"/>
 
 
     <root level="debug">
