@@ -1,9 +1,8 @@
-package com.oneous.javaee.jdbc;
+package com.oneous.javaee.dbconnection;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
@@ -11,23 +10,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * @author Abdullah Al Mamun Oronno
- *         Created on 5/12/15
- */
-
 
 public class DBConnection {
     public static final Logger log = LoggerFactory.getLogger(DBConnection.class);
 
-    public static Connection getConnection() {
 
+    public static Connection getDatabaseConnection() {
         Properties properties = new Properties();
         Connection connection = null;
 
         try {
-
-
             properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("db.properties"));
 
             // load the Driver Class

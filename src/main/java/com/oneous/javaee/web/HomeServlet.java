@@ -2,7 +2,7 @@ package com.oneous.javaee.web;
 
 import com.oneous.javaee.dao.UserDao;
 import com.oneous.javaee.dao.UserDaoImpl;
-import com.oneous.javaee.domain.User;
+import com.oneous.javaee.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,15 +22,16 @@ import java.util.List;
 public class HomeServlet extends HttpServlet {
     public static final Logger log = LoggerFactory.getLogger(HomeServlet.class);
 
-    private UserDao userDao = new UserDaoImpl();
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("get request at /login");
+
+        UserDao userDao = new UserDaoImpl();
         List<User> userList = userDao.getUserList();
+
         request.setAttribute("userList", userList);
         request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request, response);
     }
